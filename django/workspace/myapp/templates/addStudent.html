@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Page </title>
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+    </head>
+    
+
+<body style="background-color:#849B7D">
+<div class="container-fluid">
+    <div class="row">  
+        
+        <nav class="navbar navbar-inverse" style = "background-color: #000000;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    {% load static %}
+                    <img class="img-thumbnail pull-right" src="{% static "imgs/ftLogo1.png" %}" alt="My image"/>
+                </div>
+                <!--<a class="navbar-brand pull-left img-thumbnail" href="#"><img src="img/ftLogo1.png"></a>-->
+                {% block nav %}
+                    <div id="navbarCollapse" class="collapse navbar-collapse"  >
+                              <ul class="nav navbar-nav">
+                                <li>{% block nav-main %}<a href="{% url 'main' %}">HOME</a>{% endblock %}</li>
+                                <li>{% block nav-moreInfo %}<a href="{% url 'moreInfo' %}">REPORTS</a>{% endblock %}</li>
+                                <li>{% block nav-addStudent %}<a href="{% url 'addStudent' %}">ADD STUDENT</a>{% endblock %}</li>
+                                
+                                <li>{% block nav-charts %}<a href="{% url 'charts' %}">CHARTS</a>{% endblock %}</li>
+                              </ul>
+                              <ul class="nav navbar-nav navbar pull-right">
+                                <li><a href=""><span class="glyphicon glyphicon-user"></span> USERNAME!</a></li>
+                              </ul>
+                    </div>
+                {% endblock %}
+            </div>    
+        </nav>
+
+        <div class="container">
+            <table class="table">
+                <form action="/myapp/addStudent/"  method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <!--
+                    <tr><td>ID:</td><td><input type="text" name="id"/></td></tr>
+                    
+                    <tr><td>First Name:</td><td><input type="text" name="firstName"/></td></tr>
+        
+                    <tr><td>Last Name:</td><td><input type="text" name="lastName"/></td></tr>
+                
+                    <tr><td>Phone Number:</td><td> <input type ="text" name= "phoneNum"/></td></tr>
+                    
+                    <tr><td>Grade:</td><td><input type="text" name="grade"/></td></tr>
+                    
+                    <tr><td>DOB:</td><td><input type="text" name="dob"/></td></tr>
+                    
+                    <tr><td>Gender:</td><td><input type="text" name="gender"/></td></tr>
+                    
+                    <tr><td>School:</td><td><input type="text" name="school"/></td></tr>
+                    
+                    <tr><td>Level:</td><td> <select name="level"></td></tr>
+                        
+                    <tr><td>Notes:</td><td><input type="text" name="grade"/></td></tr>
+                      
+                    <tr><td colspan="2"><div class="text-center"><input type="submit" value="Add Student" name="updateUser"></div></td></tr>
+                    -->
+                    </table>
+                    <div class="text-center"> 
+                        <button class="btn btn-lg btn-primary " type="submit">Add Student</button>
+                    </div>
+                </form>
+            
+        </div>
+  <div class="span8"></div>    
+</div>  
+    </body>
+</html>

@@ -1,0 +1,27 @@
+ body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+.table{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+.page-header{
+    text-decoration: blink;
+    text-shadow:#1a2b29;
+    background-color: #6b6b6b;
+}
+
+.navbar-inverse{
+    background-color: green;
+    
+}
+
+
+/*.img-thumbnail{
+    width: 60px;
+    height: 45px;
+}
+*/

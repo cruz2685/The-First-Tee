@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Base </title>
+    </head>
+    <body>
+    <h1> BASE</h1>   
+    
+    <!--{%block nav%}
+        <ul id="nav">
+            <li>{%block nav-test%}<a href="{%url test%}">Test Page</a>{%endblock%}</li>
+        </ul>
+    {%endblock%} -->
+    
+    <nav class = "navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'test:base' %}">Test</a>
+            </div>
+            
+        </div>
+        
+        
+    </nav>
+    
+    
+    </body>
+</html>

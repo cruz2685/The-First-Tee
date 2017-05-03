@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TFT Charts </title>
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+    </head>
+     
+<body style="background-color:#849B7D">
+<div class="text-center">
+    <div class="row">         
+        <nav class="navbar navbar-inverse" style = "background-color: #000000;">
+            <div class="container">
+                <!--<a class="navbar-brand pull-left img-thumbnail" href="#"><img src="img/ftLogo1.png"></a>-->
+                <div class="navbar-collapse collapse navbar-responsive-collapse" >
+                          <ul class="nav navbar-nav">
+                            <li><img src="img/ftLogo1.png"></li>
+                            <li><a href="main.html">Home</a></li>
+                            <li><a href="moreInfo.html" >Reports</a></li>
+                            <li><a href="addStudent.html">Add Student</a></li>
+                            <li><a href="admin.html">Admistration Page</a></li>
+                            <li><a href="charts.html">Charts</a></li>
+
+                          </ul>
+                          
+                          <ul class="nav navbar-nav navbar pull-right">
+                            <li><a href=""><span class="glyphicon glyphicon-user"></span> Username!</a></li>
+                          </ul>
+                </div>
+            </div>    
+        </nav>
+
+
+    <canvas id="myChart" width="10px" height="20" >   
+            <script>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                ctx.canvas.width = 500;
+                ctx.canvas.height = 400;
+                var myChart = new Chart(ctx, {
+                type: 'bar',
+                
+                data: {
+                     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                     datasets: [{
+                          label: 'school1',
+                          data: [12, 19, 3, 17, 6, 3, 7],
+                          backgroundColor: "rgba(153,255,0,0.4)"
+                        }, {
+                          label: 'school2',
+                          data: [2, 29, 5, 5, 2, 3, 10],
+                          backgroundColor: "rgba(215,153,0,0)"
+                        },{
+                          label: 'school2',
+                          data: [2, 29, 5, 5, 2, 3, 10],
+                          backgroundColor: "rgba(255,1153,0,26)"
+                        },{
+                          label: 'school2',
+                          data: [2, 29, 5, 5, 2, 3, 10],
+                          backgroundColor: "rgba(155,153,0,26)"
+                        },
+                        {
+                          label: 'school3',
+                          data: [2, 9, 8, 2, 3, 7, 11],
+                          backgroundColor: "rgba(21,153,0,16)"
+                        }]
+                    },
+                     options: {
+                        maintainAspectRatio: false,
+                        responsive: false,
+                        title: {
+                            display: true,
+                            text: 'Number of Students Per School'
+                        }
+                     }
+                        
+            });
+            </script>
+    </canvas>
+    
+    
+    <canvas id="myChart1" height="80" >
+        <script>
+        var ctx = document.getElementById('myChart1').getContext('2d');
+        ctx.canvas.width = 500;
+        ctx.canvas.height = 400;
+        var myChart = new Chart(ctx, {
+          type: 'line',
+               data: {
+                 labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                 datasets: [{
+                      label: 'Group 1',
+                      data: [12, 19, 3, 17, 6, 3, 7],
+                      backgroundColor: "rgba(153,255,51,0.4)"
+                    }, {
+                      label: 'Group 2',
+                      data: [2, 29, 5, 5, 2, 3, 10],
+                      backgroundColor: "rgba(255,153,0,0.4)"
+                    },
+                    {
+                      label: 'Group 3',
+                      data: [2, 9, 8, 2, 3, 7, 11],
+                      backgroundColor: "rgba(255,193,0,10)"
+                    }]
+                },
+                 options: {
+                     maintainAspectRatio: false,
+                    responsive: false,
+                    title: {
+                        display: true,
+                        text: 'Students\' Ethnic Group'
+                    }
+                 }
+                    
+        });
+        </script>
+    </canvas>    
+        
+  
+    <canvas id="myChart2" height="80">
+        <script>
+        var ctx = document.getElementById("myChart2").getContext('2d');
+        ctx.canvas.width = 500;
+        ctx.canvas.height = 400;
+        var myChart = new Chart(ctx, {
+              type: 'polarArea',
+              data: {
+                labels: ["2", "1", "8", "7", "2", "5", "6"],
+                datasets: [{
+                  backgroundColor: [
+                    "#2ecc71",
+                    "#3498db",
+                    "#95a5a6",
+                    "#9b59b6",
+                    "#f1c40f",
+                    "#e74c3c",
+                    "#34495e"
+                  ],
+                  data: [12, 19, 3, 17, 28, 24, 7]
+                }]
+              },
+              options: {
+                    maintainAspectRatio: false,
+                    responsive: false,
+                    title: {
+                        display: true,
+                        text: 'Custom Chart Title'
+                    }
+                 }
+            });
+        </script>
+    </canvas>
+        
+</div>       
+
+    </body>
+</html>
+
+<!--<div class="text-center"> 
+        <nav class="navbar navbar-light">
+            <a href="main.html" style="color:blue;text-decoration:none" class="btn btn-default btn-sm btn-margin-left"  > <b>HOME</b> </a>
+            <a href="moreInfo.html" style="color:blue;text-decoration:none" class="btn btn-default btn-sm btn-margin-left"><b>REPORTS</b></a>
+            <a href="charts.html" style="color:blue;text-decoration:none" class="btn btn-default btn-sm btn-margin-left"><b>CHARTS</b></a>
+            <a href="addStudent.html" style="color:blue;text-decoration:none" class="btn btn-default btn-sm btn-margin-left"><b>ADD STUDENT</b> </a>
+            <a href="admin.html" style="color:blue;text-decoration:none" class="btn btn-default btn-sm btn-margin-left"><b>ADMINISTRATION PAGE</b> </a>
+        </nav>
+    </div>-->
